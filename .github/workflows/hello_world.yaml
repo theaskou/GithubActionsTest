@@ -1,0 +1,17 @@
+name: Hello world workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest #Hvilken type runner skal køre jobbet
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run hello world
+        run: echo "Hello world"
+        # shell: bash
